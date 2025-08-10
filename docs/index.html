@@ -314,6 +314,12 @@
               const initialWishes = await response.json();
               // Используем данные
               console.log(initialWishes);
+              initialWishes.wishes.forEach(wish => {
+              addWishToDOM(wish);
+            });
+
+            // Обработчик добавления подарка
+            document.getElementById('addWishBtn').addEventListener('click', addNewWish);
             } catch (e) {
               console.error('Ошибка загрузки JSON:', e);
             }
@@ -322,12 +328,7 @@
             await loadJson();
            })();
             // Добавляем начальные подарки
-            initialWishes.wishes.forEach(wish => {
-                addWishToDOM(wish);
-            });
 
-            // Обработчик добавления подарка
-            document.getElementById('addWishBtn').addEventListener('click', addNewWish);
         });
 
         // Добавление нового подарка
