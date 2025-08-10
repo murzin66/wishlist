@@ -352,7 +352,7 @@
               if (!response.ok) throw new Error('HTTP error ' + response.status);
               const initialWishes = await response.json();
               // Используем данные
-              console.log(data);
+              console.log(initialWishes);
             } catch (e) {
               console.error('Ошибка загрузки JSON:', e);
             }
