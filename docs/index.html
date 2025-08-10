@@ -184,6 +184,9 @@
             margin-bottom: 25px;
             color: #2c3e50;
         }
+        a {
+          text-decoration: none;
+        }
 
         .form-group {
             margin-bottom: 20px;
@@ -351,7 +354,7 @@
             }
 
             // Если изображение не указано, используем заглушку
-            const imageUrl = wish.image || 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80';
+            const imageUrl = wish.image || 'https://static.insales-cdn.com/r/6aNy3whtzww/rs:fit:1000:0:1/q:100/plain/images/products/1/1794/317417218/0.jpg@jpg';
 
             // Создаем HTML структуру
             wishCard.innerHTML = `
@@ -363,7 +366,9 @@
                     <div class="wish-meta">
                         <span class="wish-price"> ${wish.price} рублей</span>
                     </div>
-                    <button class="status-btn" onclick="goToPage(${wish.link})"> Подробнее на сайте</button>
+                    <a her = $(wish.link)>
+                      <button class="status-btn" onclick="goToPage(${wish.link})"> Подробнее на сайте</button>
+                    </a>
                 </div>
             `;
 
@@ -371,9 +376,7 @@
             wishlistContainer.appendChild(wishCard);
         }
 
-    function goToPage(url) {
-      window.location.href = url;
-    }
+
     </script>
 </body>
 </html>
