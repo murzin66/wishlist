@@ -291,7 +291,7 @@
     <div class="container">
         <header>
             <h1><i class="fas fa-gift"></i> Мой Вишлист</h1>
-            <p>Список вещей, которые я бы хотел получить в подарок. Вы можете отметить подарок как купленный, если решите что-то подарить.</p>
+            <p>Список вещей, которые я бы хотел получить в подарок или купить сам</p>
         </header>
 
         <div class="wishlist-container" id="wishlistContainer">
@@ -399,10 +399,9 @@
                     <h3 class="wish-title">${wish.title}</h3>
                     <p class="wish-description">${wish.description}</p>
                     <div class="wish-meta">
-                        <span class="wish-price">$${wish.price}</span>
-                        <a href="${wish.link}" class="wish-link" target="_blank">Подробнее на сайте</a>
+                        <span class="wish-price"${wish.price}рублей </span>
                     </div>
-                    <button class="status-btn">Отметить как купленное</button>
+                    <button class="status-btn"> <a href = "${wish.link}">Подробнее на сайте</a></button>
                 </div>
             `;
 
