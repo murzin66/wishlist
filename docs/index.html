@@ -322,7 +322,9 @@
               console.error('Ошибка загрузки JSON:', e);
             }
           }
-          await loadJson();
+           (async () => {
+            await loadJson();
+           })();
             // Добавляем начальные подарки
             initialWishes.wishes.forEach(wish => {
                 addWishToDOM(wish);
