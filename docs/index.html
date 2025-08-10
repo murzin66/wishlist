@@ -331,44 +331,6 @@
 
         });
 
-        // Добавление нового подарка
-        function addNewWish() {
-            const title = document.getElementById('wish-name').value;
-            const description = document.getElementById('wish-description').value;
-            const price = document.getElementById('wish-price').value;
-            const link = document.getElementById('wish-link').value;
-            const priority = document.getElementById('wish-priority').value;
-            const image = document.getElementById('wish-image').value;
-
-            // Валидация
-            if (!title || !description || !price || !link) {
-                alert('Пожалуйста, заполните все обязательные поля');
-                return;
-            }
-
-            // Создаем объект подарка
-            const newWish = {
-                title,
-                description,
-                price,
-                link,
-                priority,
-                image
-            };
-
-            // Добавляем в DOM
-            addWishToDOM(newWish);
-
-            // Очищаем форму
-            document.getElementById('wish-name').value = '';
-            document.getElementById('wish-description').value = '';
-            document.getElementById('wish-price').value = '';
-            document.getElementById('wish-link').value = '';
-            document.getElementById('wish-priority').value = '';
-            document.getElementById('wish-image').value = '';
-
-            alert('Подарок успешно добавлен!');
-        }
 
         // Функция добавления подарка в DOM
         function addWishToDOM(wish) {
@@ -399,44 +361,17 @@
                     <h3 class="wish-title">${wish.title}</h3>
                     <p class="wish-description">${wish.description}</p>
                     <div class="wish-meta">
-                        <span class="wish-price"${wish.price}рублей </span>
+                        <span class="wish-price"> ${wish.price} </span>
                     </div>
-                    <button class="status-btn"> <a href = "${wish.link}">Подробнее на сайте</a></button>
+                    <button class="status-btn" onclick="goToPage(${wish.link})"> Подробнее на сайте</button>
                 </div>
             `;
 
             // Добавляем в контейнер
             wishlistContainer.appendChild(wishCard);
-
-            // Добавляем обработчик для кнопки
-            const statusBtn = wishCard.querySelector('.status-btn');
-            statusBtn.addEventListener('click', function() {
-                toggleBoughtStatus(this);
-            });
         }
 
-        // Переключение статуса "куплено"
-        function toggleBoughtStatus(button) {
-            const card = button.closest('.wish-card');
 
-            if (button.classList.contains('bought')) {
-                button.classList.remove('bought');
-                button.textContent = 'Отметить как купленное';
-
-                // Удаляем метку "куплено"
-                const boughtBadge = card.querySelector('.bought');
-                if (boughtBadge) boughtBadge.remove();
-            } else {
-                button.classList.add('bought');
-                button.textContent = 'Куплено ✓';
-
-                // Добавляем метку "куплено"
-                const boughtBadge = document.createElement('div');
-                boughtBadge.className = 'bought';
-                boughtBadge.textContent = 'Куплено';
-                card.prepend(boughtBadge);
-            }
-        }
     </script>
 </body>
 </html>
