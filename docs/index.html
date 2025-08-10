@@ -75,8 +75,23 @@
             width: 100%;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+        }
+        .wish-image {
+            position: relative;
         }
 
+        .wish-image::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%; /* Соотношение 16:9 */
+        }
+
+        @media (max-width: 480px) {
+            .wish-image {
+                height: 150px;
+            }
+        }
         .wish-content {
             padding: 20px;
         }
