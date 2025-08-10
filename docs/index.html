@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Вишлист</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Стили из предыдущего примера (оставляем без изменений) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            animation: fadeIn 1s ease;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .wishlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px 0 50px;
+        }
+
+        .wish-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .wish-image {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wish-content {
+            padding: 20px;
+        }
+
+        .wish-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .wish-description {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .wish-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .wish-price {
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+
+        .wish-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .wish-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .priority {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .bought {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #27ae60;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .status-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #3498db;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .status-btn:hover {
+            background: #2980b9;
+        }
+
+        .status-btn.bought {
+            background: #2ecc71;
+        }
+
+        .status-btn.bought:hover {
+            background: #27ae60;
+        }
+
+        .add-wish-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn-submit {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #2980b9;
+        }
+
+        .empty-state {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 50px 30px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .empty-state i {
+            font-size: 5rem;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .empty-state p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wish-card {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .wish-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-gift"></i> Мой Вишлист</h1>
+            <p>Список вещей, которые я бы хотел получить в подарок. Вы можете отметить подарок как купленный, если решите что-то подарить.</p>
+        </header>
+
+        <div class="wishlist-container" id="wishlistContainer">
+            <!-- Подарки будут добавляться сюда -->
+        </div>
+
+        <div class="add-wish-form">
+            <h2 class="form-title"><i class="fas fa-plus-circle"></i> Добавить новый подарок</h2>
+            <div class="form-group">
+                <label for="wish-name">Название подарка</label>
+                <input type="text" id="wish-name" class="form-control" placeholder="Что бы вы хотели получить?">
+            </div>
+            <div class="form-group">
+                <label for="wish-description">Описание</label>
+                <textarea id="wish-description" class="form-control" rows="3" placeholder="Подробное описание подарка..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="wish-price">Цена (USD)</label>
+                <input type="number" id="wish-price" class="form-control" placeholder="Пример: 50">
+            </div>
+            <div class="form-group">
+                <label for="wish-link">Ссылка на подарок</label>
+                <input type="url" id="wish-link" class="form-control" placeholder="https://example.com/gift">
+            </div>
+            <div class="form-group">
+                <label for="wish-priority">Приоритет</label>
+                <select id="wish-priority" class="form-control">
+                    <option value="">Без приоритета</option>
+                    <option value="high">Высокий</option>
+                    <option value="medium">Средний</option>
+                    <option value="low">Низкий</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="wish-image">URL изображения (необязательно)</label>
+                <input type="url" id="wish-image" class="form-control" placeholder="https://example.com/image.jpg">
+            </div>
+            <button class="btn-submit" id="addWishBtn">Добавить в вишлист</button>
+        </div>
+
+        <footer>
+            <p>Создано с ❤️ для GitHub Pages | &copy; <span id="currentYear"></span> Мой Вишлист</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Установка текущего года
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Инициализация начальных подарков
+            //const fs = require('wishlist.json');
+
+          async function loadJson() {
+            console.log("fuction call");
+            try {
+              const response = await fetch('wishlist.json');
+              if (!response.ok) throw new Error('HTTP error ' + response.status);
+              const initialWishes = await response.json();
+              // Используем данные
+              console.log(data);
+            } catch (e) {
+              console.error('Ошибка загрузки JSON:', e);
+            }
+          }
+          loadJson();
+            // Добавляем начальные подарки
+            initialWishes.wishes.forEach(wish => {
+                addWishToDOM(wish);
+            });
+
+            // Обработчик добавления подарка
+            document.getElementById('addWishBtn').addEventListener('click', addNewWish);
+        });
+
+        // Добавление нового подарка
+        function addNewWish() {
+            const title = document.getElementById('wish-name').value;
+            const description = document.getElementById('wish-description').value;
+            const price = document.getElementById('wish-price').value;
+            const link = document.getElementById('wish-link').value;
+            const priority = document.getElementById('wish-priority').value;
+            const image = document.getElementById('wish-image').value;
+
+            // Валидация
+            if (!title || !description || !price || !link) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+
+            // Создаем объект подарка
+            const newWish = {
+                title,
+                description,
+                price,
+                link,
+                priority,
+                image
+            };
+
+            // Добавляем в DOM
+            addWishToDOM(newWish);
+
+            // Очищаем форму
+            document.getElementById('wish-name').value = '';
+            document.getElementById('wish-description').value = '';
+            document.getElementById('wish-price').value = '';
+            document.getElementById('wish-link').value = '';
+            document.getElementById('wish-priority').value = '';
+            document.getElementById('wish-image').value = '';
+
+            alert('Подарок успешно добавлен!');
+        }
+
+        // Функция добавления подарка в DOM
+        function addWishToDOM(wish) {
+            const wishlistContainer = document.getElementById('wishlistContainer');
+
+            // Создаем элементы
+            const wishCard = document.createElement('div');
+            wishCard.className = 'wish-card';
+
+            // Определяем приоритет
+            let priorityText = '';
+            if (wish.priority === 'high') {
+                priorityText = '<span class="priority">Высокий приоритет</span>';
+            } else if (wish.priority === 'medium') {
+                priorityText = '<span class="priority">Средний приоритет</span>';
+            } else if (wish.priority === 'low') {
+                priorityText = '<span class="priority">Низкий приоритет</span>';
+            }
+
+            // Если изображение не указано, используем заглушку
+            const imageUrl = wish.image || 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80';
+
+            // Создаем HTML структуру
+            wishCard.innerHTML = `
+                <div class="wish-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('${imageUrl}');"></div>
+                ${priorityText}
+                <div class="wish-content">
+                    <h3 class="wish-title">${wish.title}</h3>
+                    <p class="wish-description">${wish.description}</p>
+                    <div class="wish-meta">
+                        <span class="wish-price">$${wish.price}</span>
+                        <a href="${wish.link}" class="wish-link" target="_blank">Подробнее на сайте</a>
+                    </div>
+                    <button class="status-btn">Отметить как купленное</button>
+                </div>
+            `;
+
+            // Добавляем в контейнер
+            wishlistContainer.appendChild(wishCard);
+
+            // Добавляем обработчик для кнопки
+            const statusBtn = wishCard.querySelector('.status-btn');
+            statusBtn.addEventListener('click', function() {
+                toggleBoughtStatus(this);
+            });
+        }
+
+        // Переключение статуса "куплено"
+        function toggleBoughtStatus(button) {
+            const card = button.closest('.wish-card');
+
+            if (button.classList.contains('bought')) {
+                button.classList.remove('bought');
+                button.textContent = 'Отметить как купленное';
+
+                // Удаляем метку "куплено"
+                const boughtBadge = card.querySelector('.bought');
+                if (boughtBadge) boughtBadge.remove();
+            } else {
+                button.classList.add('bought');
+                button.textContent = 'Куплено ✓';
+
+                // Добавляем метку "куплено"
+                const boughtBadge = document.createElement('div');
+                boughtBadge.className = 'bought';
+                boughtBadge.textContent = 'Куплено';
+                card.prepend(boughtBadge);
+            }
+        }
+    </script>
+</body>
+</html>
