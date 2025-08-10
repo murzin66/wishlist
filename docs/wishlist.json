@@ -25,6 +25,30 @@
       "link": "https://www.dns-shop.ru/product/d53903cbe3747e82/kuhonnye-vesy-dexp-pt-25-seryj/",
       "priority": "medium",
       "image": "https://c.dns-shop.ru/thumb/st4/fit/300/300/f8a8a746d13ab8edf2421dd08689d1d5/691747453dd174e0dd34735566edacf08c577a52695577b97b2e087b9ff34d33.jpg"
+    },
+    {
+      "title": "Торшер",
+      "description": "Торшер напольный",
+      "price": "4886",
+      "link": "https://www.ozon.ru/product/napolnyy-svetilnik-e27-40-vt-1889577807/?at=57tw5x29QcyW6xzmFjPq3xEcy3kxz5fmyzWQETBVv1Mp",
+      "priority": "high",
+      "image": "https://ir-8.ozone.ru/s3/multimedia-1-0/wc1000/7342055136.jpg"
+    },
+    {
+      "title": "Wi-fi реле",
+      "description": "Удаленное управление освещением",
+      "price": "328",
+      "link": "https://www.ozon.ru/product/umnoe-wi-fi-rele-mini-smart-switch-tuya-odnokanalnyy-16a-rabotaet-s-yandeks-alisoy-895268867/?at=pZtp1v7oNSZv1XMvuo8noxYc0wMAnDHW9K63kFgDGkWY",
+      "priority": "low",
+      "image": "https://ir-8.ozone.ru/s3/multimedia-3/wc1000/6581697519.jpg"
+    },
+    {
+      "title": "Яндекс Алиса",
+      "description": "умная колонка",
+      "price": "7500",
+      "link": "https://www.mvideo.ru/products/umnaya-kolonka-yandeks-stanciya-mini-s-chasami-s-alisoi-na-yagpt-cinii-sapfir-10vt-yndx-00020b-10030295",
+      "priority": "low",
+      "image": "https://c.dns-shop.ru/thumb/st1/fit/320/250/74735358301c5a8ad160b2f3f4cd4e1e/ba7096c27455be4ee9e0587ac78ba5509c922adb7d14c431fc9a4973eaec5639.jpg"
     }
   ]
 }
