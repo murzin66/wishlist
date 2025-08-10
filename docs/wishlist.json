@@ -49,6 +49,38 @@
       "link": "https://www.mvideo.ru/products/umnaya-kolonka-yandeks-stanciya-mini-s-chasami-s-alisoi-na-yagpt-cinii-sapfir-10vt-yndx-00020b-10030295",
       "priority": "low",
       "image": "https://c.dns-shop.ru/thumb/st1/fit/320/250/74735358301c5a8ad160b2f3f4cd4e1e/ba7096c27455be4ee9e0587ac78ba5509c922adb7d14c431fc9a4973eaec5639.jpg"
+    },
+    {
+      "title": "Ложка для обуви",
+      "description": "ложка для обуви с магнитным крплением",
+      "price": "404",
+      "link": "https://www.ozon.ru/product/lozhka-dlya-obuvi-dlinnaya-75-sm-na-magnite-1152792307/?at=qQtJKzVNPcEM7MvWUjGMkQDsPO63QNUKDByrNtOGgXMX",
+      "priority": "low",
+      "image": "https://ir-8.ozone.ru/s3/multimedia-t/wc1000/6828004505.jpg"
+    },
+    {
+      "title": "Пылесос",
+      "description": "вертикальный пылесос deerma",
+      "price": "3000",
+      "link": "https://www.dns-shop.ru/product/ab51fca6a4a53332/pylesos--vertikalnyj--deerma-dx700--belyj/",
+      "priority": "low",
+      "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/1db4f9988e89165b76ac7a6624d55976/d56897052330f9a751c3c02d45fa7aedd64642227575187cd2162a272c506817.jpg.webp"
+    },
+    {
+      "title": "Usb разветвитель",
+      "description": "USB хаб Ugreen",
+      "price": "1300",
+      "link": "https://www.dns-shop.ru/product/38d5120eb2c02eb1/usb-razvetvitel-ugreen-cm219/",
+      "priority": "medium",
+      "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/ed465ef57622241cc5ab7443ad2b312d/b664c18fa513720db3b6cf0f2432fe3a447e102f2ec88015866197fdf92cd91c.jpg.webp"
+    },
+    {
+      "title": "Веб-камера",
+      "description": "Веб-камера настольная",
+      "price": "3900",
+      "link": "https://www.dns-shop.ru/product/9860e635bc872ff4/veb-kamera-fifine-k420/",
+      "priority": "medium",
+      "image": "https://c.dns-shop.ru/thumb/st1/fit/wm/0/0/ec8101b436ac7b68287a8c9b0f5a14f9/ae91a8cbf8b5eeba8c2134cbaa245be70fe4a0b37097cc32e1282faffe3c44c5.jpg.webp"
     }
   ]
 }
