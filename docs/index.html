@@ -361,7 +361,7 @@
                     <h3 class="wish-title">${wish.title}</h3>
                     <p class="wish-description">${wish.description}</p>
                     <div class="wish-meta">
-                        <span class="wish-price"> ${wish.price} </span>
+                        <span class="wish-price"> ${wish.price} рублей</span>
                     </div>
                     <button class="status-btn" onclick="goToPage(${wish.link})"> Подробнее на сайте</button>
                 </div>
@@ -371,7 +371,9 @@
             wishlistContainer.appendChild(wishCard);
         }
 
-
+    function goToPage(url) {
+      window.location.href = url;
+    }
     </script>
 </body>
 </html>
