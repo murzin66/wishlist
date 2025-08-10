@@ -295,45 +295,10 @@
         </header>
 
         <div class="wishlist-container" id="wishlistContainer">
-            <!-- Подарки будут добавляться сюда -->
-        </div>
 
-        <div class="add-wish-form">
-            <h2 class="form-title"><i class="fas fa-plus-circle"></i> Добавить новый подарок</h2>
-            <div class="form-group">
-                <label for="wish-name">Название подарка</label>
-                <input type="text" id="wish-name" class="form-control" placeholder="Что бы вы хотели получить?">
-            </div>
-            <div class="form-group">
-                <label for="wish-description">Описание</label>
-                <textarea id="wish-description" class="form-control" rows="3" placeholder="Подробное описание подарка..."></textarea>
-            </div>
-            <div class="form-group">
-                <label for="wish-price">Цена (USD)</label>
-                <input type="number" id="wish-price" class="form-control" placeholder="Пример: 50">
-            </div>
-            <div class="form-group">
-                <label for="wish-link">Ссылка на подарок</label>
-                <input type="url" id="wish-link" class="form-control" placeholder="https://example.com/gift">
-            </div>
-            <div class="form-group">
-                <label for="wish-priority">Приоритет</label>
-                <select id="wish-priority" class="form-control">
-                    <option value="">Без приоритета</option>
-                    <option value="high">Высокий</option>
-                    <option value="medium">Средний</option>
-                    <option value="low">Низкий</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="wish-image">URL изображения (необязательно)</label>
-                <input type="url" id="wish-image" class="form-control" placeholder="https://example.com/image.jpg">
-            </div>
-            <button class="btn-submit" id="addWishBtn">Добавить в вишлист</button>
         </div>
 
         <footer>
-            <p>Создано с ❤️ для GitHub Pages | &copy; <span id="currentYear"></span> Мой Вишлист</p>
         </footer>
     </div>
 
@@ -357,7 +322,7 @@
               console.error('Ошибка загрузки JSON:', e);
             }
           }
-          loadJson();
+          await loadJson();
             // Добавляем начальные подарки
             initialWishes.wishes.forEach(wish => {
                 addWishToDOM(wish);
