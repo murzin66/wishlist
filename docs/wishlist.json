@@ -3,28 +3,28 @@
   "wishes":
   [
     {
-      "title": "Умные часы Apple Watch",
-      "description": "Новая модель с функциями отслеживания здоровья, GPS и водонепроницаемостью до 50 метров.",
-      "price": "399",
-      "link": "#",
+      "title": "Машинка для чистки катышков",
+      "description": "Машинка для чистки катышков Xiaomi",
+      "price": "950",
+      "link": "https://www.dns-shop.ru/product/3e40e94a92aad21a/masinka-dla-udalenia-katyskov-xiaomi-lint-remover-2/",
       "priority": "high",
-      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+      "image": "https://c.dns-shop.ru/thumb/st1/fit/0/0/5aab7fa1b1db0344717e287cacdaa629/3d3f0aa81860ed5fcbddf85e8aec914d89c8ab60317f215624155867f1ae6da2.jpg.webp"
     },
     {
-    "title": "Беспроводные наушники",
-    "description": "Премиальные наушники с активным шумоподавлением и превосходным качеством звука.",
-    "price": "229",
-    "link": "#",
-    "priority": "",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+    "title": "Весы напольные",
+    "description": "Весы напольные kitfort",
+    "price": "1400",
+    "link": "https://www.dns-shop.ru/product/9369c8dd14c23333/vesy-kitfort-kt-805-cernyj/",
+    "priority": "high",
+    "image": "https://c.dns-shop.ru/thumb/st4/fit/0/0/a5c1de85526ef262ac68f518b1ea3866/c7b7333d43b1fa88110f117c3951725f9744399d662be196d5380e08c14f7f60.jpg.webp"
     },
     {
-      "title": "Фотоаппарат моментальной печати",
+      "title": "Весы кухонные ",
       "description": "Компактный фотоаппарат с возможностью мгновенной печати снимков.",
-      "price": "129",
-      "link": "#",
+      "price": "500",
+      "link": "https://www.dns-shop.ru/product/d53903cbe3747e82/kuhonnye-vesy-dexp-pt-25-seryj/",
       "priority": "medium",
-      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+      "image": "https://c.dns-shop.ru/thumb/st4/fit/wm/0/0/2fbd1164f7c3f4f561491863d733ccc2/691747453dd174e0dd34735566edacf08c577a52695577b97b2e087b9ff34d33.jpg.webp"
     }
   ]
 }
